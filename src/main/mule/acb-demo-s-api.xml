@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+    <flow name="demoFlow" doc:id="d8f2e4a6-5a8f-4f56-9c4b-1234d8e4a6b7">
+        <http:listener doc:name="HTTP Listener" doc:id="a3b7d5e9-1234-4f56-9c4b-5678a3b7d5e9" config-ref="HTTP_Listener_config" path="/demo" allowedMethods="GET"/>
+        <logger level="INFO" doc:name="Entry Logger" doc:id="b3c7d5e9-1234-4f56-9c4b-5678b3c7d5e9" message='#[output application/json --- {correlationId: vars.correlationId, applicationName: "DemoApp", flowName: "demoFlow", businessProcess: "SampleProcess"}]'/>
+        <ee:transform doc:name="Transform Message" doc:id="c3c7d5e9-1234-4f56-9c4b-5678c3c7d5e9">
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+                    output application/json
+                    ---
+                    {
+                        customerId: "12345",
+                        customerName: "John Doe",
+                        customerEmail: "johndoe@example.com"
+                    }]]>
+                </ee:set-payload>
+            </ee:message>
+        </ee:transform>
+        <logger level="INFO" doc:name="Exit Logger" doc:id="d3c7d5e9-1234-4f56-9c4b-5678d3c7d5e9" message='#[output application/json --- {correlationId: vars.correlationId, applicationName: "DemoApp", flowName: "demoFlow", businessProcess: "SampleProcess"}]'/>
+        <error-handler>
+            <on-error-continue enableNotifications="true" logException="true" doc:name="CoE_Global_Error_Handler" doc:id="e3c7d5e9-1234-4f56-9c4b-5678e3c7d5e9" type="ANY">
+                <logger level="ERROR" doc:name="Error Logger" doc:id="f3c7d5e9-1234-4f56-9c4b-5678f3c7d5e9" message='#[output application/json --- {correlationId: vars.correlationId, applicationName: "DemoApp", flowName: "demoFlow", error: error.description}]'/>
+            </on-error-continue>
+        </error-handler>
+    </flow>
+</mule>

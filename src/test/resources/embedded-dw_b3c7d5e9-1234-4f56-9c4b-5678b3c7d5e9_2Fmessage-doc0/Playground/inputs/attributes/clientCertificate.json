@@ -1,0 +1,74 @@
+{
+  "basicConstraints": 47,
+  "criticalExtensionOIDs": [
+    "arcu",
+    "a",
+    "ipsum"
+  ],
+  "extendedKeyUsage": [
+    "felis",
+    "sodales",
+    "Nam"
+  ],
+  "extensions": [
+    {
+      "criticality": false,
+      "oid": "elit"
+    }
+  ],
+  "issuerAlternativeNames": [
+    {
+      "name": "Aleshia",
+      "type": 96
+    }
+  ],
+  "issuerDN": {
+    "commonName": "justo",
+    "name": "Dane"
+  },
+  "issuerUniqueID": [
+    true,
+    true
+  ],
+  "issuerX500Principal": {
+    "name": "Alfonso"
+  },
+  "keyUsage": [
+    true,
+    false,
+    true
+  ],
+  "name": "Amina",
+  "nonCriticalExtensionOIDs": [
+    "nunc",
+    "consectetur",
+    "eget"
+  ],
+  "publicKey": {
+    "algorithm": "semper",
+    "modulus": 90,
+    "params": 23,
+    "publicKey": "pulvinar"
+  },
+  "serialNumber": 22,
+  "serialNumberObject": {
+    "serialNumber": 21
+  },
+  "sigAlgName": "consectetur",
+  "sigAlgOID": "Nam",
+  "subjectAlternativeNames": [
+    {
+      "name": "Cristopher",
+      "type": 44
+    }
+  ],
+  "subjectDN": {
+    "commonName": "elit",
+    "name": "Clair"
+  },
+  "subjectX500Principal": {
+    "name": "Clifford"
+  },
+  "type": "nunc",
+  "version": 27
+}

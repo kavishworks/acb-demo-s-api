@@ -1,0 +1,27 @@
+# Development Environment Configuration
+# HTTP Configuration
+http:
+  port: 8081
+  host: "0.0.0.0"
+
+# API Configuration
+api:
+  id: "acb-demo-s-api"
+
+# Database Configuration
+db:
+  host: "dev-db-server.company.com"
+  user: "dev_user"
+  port: 3306
+  name: "acb_demo_dev"
+
+# Application Configuration
+app:
+  name: "acb-demo-s-api"
+  environment: "development"
+  version: "1.0.0"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  pattern: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"

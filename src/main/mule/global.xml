@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+
+    <configuration-properties file="config.properties" doc:name="Configuration properties" />
+
+    <error-handler name="CoE_Global_Error_Handler" doc:name="CoE Global Error Handler">
+        <on-error-continue enableNotifications="true" logException="true" doc:name="On Error Continue" type="ANY">
+            <logger level="ERROR" doc:name="Global Error Logger" message='#[output application/json --- {correlationId: vars.correlationId default "", applicationName: app.name, error: error.description, timestamp: now()}]' />
+            <ee:transform doc:name="Error Response Transform">
+                <ee:message>
+                    <ee:set-payload>
+                        <![CDATA[%dw 2.0
+output application/json
+---
+{
+    "error": {
+        "message": "An unexpected error occurred",
+        "correlationId": vars.correlationId default "",
+        "timestamp": now()
+    }
+}]]>
+                    </ee:set-payload>
+                </ee:message>
+                <ee:variables>
+                    <ee:set-variable variableName="httpStatus">500</ee:set-variable>
+                </ee:variables>
+            </ee:transform>
+        </on-error-continue>
+    </error-handler>
+
+    <configuration defaultErrorHandler-ref="CoE_Global_Error_Handler" />
+
+    <http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config">
+        <http:listener-connection host="${http.host}" port="${http.port}">
+            <http:protocol-support />
+        </http:listener-connection>
+    </http:listener-config>
+
+</mule>

@@ -1,0 +1,22 @@
+# Local Environment Configuration
+# HTTP Configuration
+http:
+  port: 8081
+  host: "0.0.0.0"
+
+# API Configuration
+api:
+  id: "acb-demo-s-api"
+
+# Database Configuration
+db:
+  host: "localhost"
+  user: "local_user"
+  port: 3306
+  name: "acb_demo_local"
+
+# Application Configuration
+app:
+  name: "acb-demo-s-api"
+  environment: "local"
+  version: "1.0.0"

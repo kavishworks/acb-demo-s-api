@@ -1,0 +1,73 @@
+{
+  "basicConstraints": 62,
+  "criticalExtensionOIDs": [
+    "ut",
+    "lectus",
+    "arcu"
+  ],
+  "extendedKeyUsage": [
+    "mi",
+    "In"
+  ],
+  "extensions": [
+    {
+      "criticality": true,
+      "oid": "venenatis"
+    }
+  ],
+  "issuerAlternativeNames": [
+    {
+      "name": "Carmelo",
+      "type": 24
+    }
+  ],
+  "issuerDN": {
+    "commonName": "ipsum",
+    "name": "Amberly"
+  },
+  "issuerUniqueID": [
+    true,
+    false,
+    true
+  ],
+  "issuerX500Principal": {
+    "name": "Aimee"
+  },
+  "keyUsage": [
+    false,
+    true,
+    false
+  ],
+  "name": "Allan",
+  "nonCriticalExtensionOIDs": [
+    "pulvinar",
+    "risus"
+  ],
+  "publicKey": {
+    "algorithm": "convallis",
+    "modulus": 57,
+    "params": 15,
+    "publicKey": "Aliquam"
+  },
+  "serialNumber": 7,
+  "serialNumberObject": {
+    "serialNumber": 49
+  },
+  "sigAlgName": "felis",
+  "sigAlgOID": "semper",
+  "subjectAlternativeNames": [
+    {
+      "name": "Abe",
+      "type": 9
+    }
+  ],
+  "subjectDN": {
+    "commonName": "pulvinar",
+    "name": "Carroll"
+  },
+  "subjectX500Principal": {
+    "name": "Craig"
+  },
+  "type": "dictum",
+  "version": 30
+}

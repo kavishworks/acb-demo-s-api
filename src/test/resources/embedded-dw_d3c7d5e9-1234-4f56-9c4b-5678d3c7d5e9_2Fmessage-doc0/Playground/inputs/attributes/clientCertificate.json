@@ -1,0 +1,75 @@
+{
+  "basicConstraints": 12,
+  "criticalExtensionOIDs": [
+    "nibh",
+    "Fusce",
+    "lorem"
+  ],
+  "extendedKeyUsage": [
+    "lectus",
+    "elit",
+    "Nunc"
+  ],
+  "extensions": [
+    {
+      "criticality": true,
+      "oid": "lectus"
+    }
+  ],
+  "issuerAlternativeNames": [
+    {
+      "name": "Amy",
+      "type": 99
+    }
+  ],
+  "issuerDN": {
+    "commonName": "ipsum",
+    "name": "Andra"
+  },
+  "issuerUniqueID": [
+    true,
+    false,
+    true
+  ],
+  "issuerX500Principal": {
+    "name": "Clemente"
+  },
+  "keyUsage": [
+    false,
+    true,
+    true
+  ],
+  "name": "Adela",
+  "nonCriticalExtensionOIDs": [
+    "nunc",
+    "semper",
+    "Aliquam"
+  ],
+  "publicKey": {
+    "algorithm": "ut",
+    "modulus": 59,
+    "params": 40,
+    "publicKey": "risus"
+  },
+  "serialNumber": 91,
+  "serialNumberObject": {
+    "serialNumber": 91
+  },
+  "sigAlgName": "lorem",
+  "sigAlgOID": "pretium",
+  "subjectAlternativeNames": [
+    {
+      "name": "Curt",
+      "type": 29
+    }
+  ],
+  "subjectDN": {
+    "commonName": "dictum",
+    "name": "Aleida"
+  },
+  "subjectX500Principal": {
+    "name": "Chet"
+  },
+  "type": "Nunc",
+  "version": 7
+}
